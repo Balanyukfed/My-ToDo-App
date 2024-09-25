@@ -1,5 +1,16 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
+}
+
+#root{ 
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .App-logo {
@@ -13,13 +24,13 @@
   }
 }
 
-.App-header {
+.App {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -35,4 +46,104 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.form {
+  display: flex;
+  gap: 20px;
+}
+
+/* Общие стили для страницы */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e; /* Очень темный серый фон */
+  color: #f5f5f5; /* Очень светлый серый текст */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Стили для контейнера To-Do List */
+.main {
+  background-color: #2a2a2a; /* Темный фон для контейнера */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 100%;
+  max-width: 800px; /* Максимальная ширина блока */
+  box-sizing: border-box; /* Включение паддинга и бордера в ширину элемента */
+}
+
+/* Стили для заголовка */
+h2 {
+  color: #e0e0e0; /* Светло-серый для заголовка */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Стили для формы добавления задачи */
+.form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #444; /* Темно-серый бордер */
+  border-radius: 4px;
+  background-color: #333; /* Темный фон для инпута */
+  color: #f5f5f5;
+}
+
+button {
+  margin-left: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4a90e2; /* Спокойный голубой цвет для кнопки добавления */
+  color: #f5f5f5;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #357abd; /* Более темный голубой при наведении */
+}
+
+/* Стили для списка задач */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #444; /* Темно-серый бордер для элементов списка */
+}
+
+span {
+  flex: 1;
+  cursor: pointer;
+}
+
+span:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #d1d1d1; /* Светло-серый цвет для кнопки удаления */
+  color: #333;
+}
+
+button:hover {
+  background-color: #b0b0b0; /* Более темный серый при наведении */
 }
