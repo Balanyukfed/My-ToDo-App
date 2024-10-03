@@ -1,0 +1,111 @@
+/* Основной контейнер */
+.main-container {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Контейнер для инпута и кнопки */
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin: 20px auto 60px;
+}
+
+/* Карточки будут располагаться в виде сетки с Flexbox */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Стиль для карточки списка */
+.list-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1 1 calc(20% - 20px); /* По умолчанию 4 карточки в ряд */
+  min-width: 200px;
+  /* max-width: 400px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+  text-align: center;
+  min-height: 200px;
+}
+
+.list__task{
+  gap: 20px;
+}
+
+.task__name {
+text-align-last: left;
+}
+
+.list-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Название списка */
+.list-card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Кнопка удаления (крестик) */
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  color: rgb(5, 9, 53);
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  background-color: transparent;
+  transition: background-color .3s ease;
+}
+
+.list-card:hover .delete-btn {
+  display: block;
+}
+
+.delete-btn:hover{
+    background-color: #e3e3e3;
+}
+
+.button--go-back{
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  width: 60px;
+  height: 60px;
+  font-size: 40px;
+  line-height: 100%;
+  background-color: transparent;
+  color: #fff;
+  transition: .3s ease;
+}
+.button--go-back:hover{
+  background-color: transparent;
+  left: 30px;
+}
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .list-card {
+    width: calc(50% - 20px); /* Две карточки в ряд для планшетов */
+  }
+}
+
+@media (max-width: 480px) {
+  .list-card {
+    width: 100%; /* Одна карточка в ряд для мобильных телефонов */
+  }
+}
+
+

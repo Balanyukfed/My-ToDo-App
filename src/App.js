@@ -1,6 +1,7 @@
 import React from "react";
 
-import ToDoList from "./ToDoList";
+// import ToDoList from "./components/ToDoList";
+import MainScreen from "./components/MainScreen";
 
 import "./App.css";
 
@@ -10,7 +11,8 @@ function App() {
       <header className="App-header">
         <h1>To-Do List</h1>
       </header>
-      <ToDoList />
+      {/* <ToDoList /> */}
+      <MainScreen />
     </div>
   );
 }

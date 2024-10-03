@@ -8,7 +8,7 @@ body {
   text-align: center;
 }
 
-#root{ 
+#root {
   width: 100%;
   box-sizing: border-box;
 }
@@ -29,7 +29,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: start;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -68,6 +68,7 @@ body {
 
 /* Стили для контейнера To-Do List */
 .main {
+  margin: 0 auto;
   background-color: #2a2a2a; /* Темный фон для контейнера */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -80,7 +81,7 @@ body {
 /* Стили для заголовка */
 h2 {
   color: #e0e0e0; /* Светло-серый для заголовка */
-  margin-bottom: 20px;
+  margin: 20px auto 40px;
   text-align: center;
 }
 
@@ -142,8 +143,16 @@ button {
   padding: 5px 10px;
   background-color: #d1d1d1; /* Светло-серый цвет для кнопки удаления */
   color: #333;
+  max-width: 150px;
+  margin: 0 auto;
 }
 
 button:hover {
   background-color: #b0b0b0; /* Более темный серый при наведении */
+}
+
+@media (max-width: 480px) {
+  .form {
+    flex-direction: column;
+  }
 }
