@@ -62,7 +62,7 @@ body {
   padding: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   height: 100vh;
 }
 
@@ -81,8 +81,10 @@ body {
 /* Стили для заголовка */
 h2 {
   color: #e0e0e0; /* Светло-серый для заголовка */
-  margin: 20px auto 40px;
+  /* margin: 20px auto 40px; */
   text-align: center;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 /* Стили для формы добавления задачи */
@@ -144,7 +146,7 @@ button {
   background-color: #d1d1d1; /* Светло-серый цвет для кнопки удаления */
   color: #333;
   max-width: 150px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 button:hover {

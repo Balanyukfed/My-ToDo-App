@@ -86,6 +86,12 @@ function MainScreen() {
     // Сбрасываем выбор списка.
   };
 
+  const updateListName = (newName) => {
+    const updatedLists = [...lists];
+    updatedLists[selectedListIndex].name = newName;
+    setLists(updatedLists);
+  }
+
   if (selectedListIndex !== null) {
     // Если выбран какой-то список, отображаем его содержимое.
     return (
@@ -118,6 +124,8 @@ function MainScreen() {
             setLists(updatedLists);
             // Сохраняем обновленные списки в состоянии.
           }}
+
+          onUpdateListName={updateListName}
         />
       </div>
     );

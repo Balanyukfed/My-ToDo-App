@@ -95,6 +95,45 @@ text-align-last: left;
   background-color: transparent;
   left: 30px;
 }
+
+.list-name-container{
+ display: block;
+ margin: 20px auto 40px;
+ min-height: 60px;
+}
+
+.list-name{
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: fit-content;
+}
+.list-name:hover{
+  cursor: pointer;
+}
+
+
+
+.edit-button {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+background-color: transparent;
+color: #929292;
+font-size: 24px;
+transform: translateY(-50%);
+opacity: 0;
+transition: opacity .3s ease;
+}
+
+.list-name-container:hover .edit-button {
+  opacity: 1;
+  }
+
+  
+.edit-button:hover {
+background-color: transparent;
+}
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
   .list-card {

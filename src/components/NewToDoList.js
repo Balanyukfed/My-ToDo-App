@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
-function NewToDoList({ name, tasks, setTasks }) {
+function NewToDoList({ name, tasks, setTasks, onUpdateListName }) {
   const [task, setTask] = useState("");
   const [editingIndex, setEditingIndex] = useState(null);
   const [taskBeingEdited, setTaskBeingEdited] = useState("");
+  const [isEditingName, setIsEditingName] = useState(false);
+  const [newListName, setNewListName] = useState(name);
 
   const handleInputChange = (event) => {
     setTask(event.target.value);
@@ -47,10 +49,44 @@ function NewToDoList({ name, tasks, setTasks }) {
     setTaskBeingEdited("");
   };
 
+  // const handleListNameChange = (event) => {
+  //   setEditedListName(event.target.value);
+  // };
+
+  const saveNewListName = (event) => {
+    event.stopPropagation();
+
+    onUpdateListName(newListName); // Обновляем имя списка в главном компоненте
+    setIsEditingName(false); // Скрываем поле ввода
+  };
+
   return (
     <div className="main">
       {/* <h2>Давай запишем:</h2> */}
-      <h2>{name}</h2>
+      <div
+        className="list-name-container" // Добавляем контейнер для имени и кнопки
+        onClick={() => setIsEditingName(true)}
+      >
+        {isEditingName ? (
+          <>
+            <input
+              type="text"
+              value={newListName}
+              onChange={(e) => setNewListName(e.target.value)}
+              />
+            <button onClick={(event) => saveNewListName(event)}>
+              Сохранить
+            </button>
+          </>
+        ) : (
+          <>
+            <h2 className="list-name">
+              {name}
+              <button className="edit-button">&#9998;</button>
+            </h2>
+          </>
+        )}
+      </div>
       <div className="form">
         <input
           type="text"
